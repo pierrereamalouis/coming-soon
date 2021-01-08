@@ -1,0 +1,13 @@
+.nav {
+  background-color: cadetblue;
+  width: 100%;
+  padding: 2rem 0;
+  z-index: 250;
+
+  &__item {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+  }
+}

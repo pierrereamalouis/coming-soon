@@ -1,0 +1,28 @@
+.content {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  margin-top: 15rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 555;
+
+  &__title {
+    justify-self: center;
+    font-size: 10rem;
+    color: $white;
+  }
+
+  &__subtitle {
+    margin-top: 5rem;
+    margin-bottom: 15rem;
+    color: $white;
+  }
+
+  &__subscribe {
+  }
+
+  &__email-box {
+  }
+}

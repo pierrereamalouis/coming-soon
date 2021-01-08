@@ -1,0 +1,24 @@
+// Maximum breakpoint width.
+// Desktop to mobile approach
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: map-get($breakpoints, $name);
+  @if $max {
+    @media only screen and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Mobile to Desktop approach
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @if $min {
+    @media only screen and (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

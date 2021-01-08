@@ -1,0 +1,35 @@
+// Font
+$font-primary: 'Helvetica', sans-serif;
+// Colors
+$primary: #7d3f0f;
+$primary-dark: darken($primary, 10%);
+$secondary: #c27933;
+$black: black;
+$white: #f3f3f3;
+
+// Border
+
+//Box Shadow
+$box-shadow: 0 1rem 1.5rem -0.8rem ($black, 0.8);
+$button-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.38), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+$menu-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  2xl: 1366px,
+  3xl: 1920px,
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  2xl: 1280px,
+  3xl: 1368px,
+) !default;
