@@ -9,7 +9,7 @@
   z-index: 10;
 
   &__title {
-    justify-self: center;
+    text-align: center;
     font-size: 10rem;
     color: $white;
     z-index: 5;
@@ -17,16 +17,19 @@
 
   &__subtitle {
     margin-top: 5rem;
-    margin-bottom: 15rem;
+    margin-bottom: 10rem;
     color: $white;
     z-index: 5;
     text-align: center;
+    font-size: 2rem;
     width: 30%;
   }
 
   &__subscribe {
     z-index: 5;
     h5 {
+      text-align: center;
+      font-size: 2rem;
       color: $white;
     }
   }

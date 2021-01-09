@@ -191,7 +191,7 @@ body {
 .cover {
   position: fixed;
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   left: 0px;
   top: 0px;
   width: 100%;
@@ -199,15 +199,18 @@ body {
   z-index: 1; }
 
 .form-group {
-  display: flex; }
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .form-control, .form-search, .form-select {
   display: inline-block;
   line-height: 1.7;
   padding: 5px 10px;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-family: inherit;
   height: 4.5rem;
+  width: 35rem;
   outline: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -251,20 +254,23 @@ body {
   align-items: center;
   z-index: 10; }
   .content__title {
-    justify-self: center;
+    text-align: center;
     font-size: 10rem;
     color: #f3f3f3;
     z-index: 5; }
   .content__subtitle {
     margin-top: 5rem;
-    margin-bottom: 15rem;
+    margin-bottom: 10rem;
     color: #f3f3f3;
     z-index: 5;
     text-align: center;
+    font-size: 2rem;
     width: 30%; }
   .content__subscribe {
     z-index: 5; }
     .content__subscribe h5 {
+      text-align: center;
+      font-size: 2rem;
       color: #f3f3f3; }
 
 .nav {
@@ -273,22 +279,36 @@ body {
   padding: 2rem 0;
   z-index: 5555;
   position: fixed;
-  top: 0; }
+  top: 0;
+  align-items: center; }
   .nav__item {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     display: flex;
     justify-content: space-between; }
 
+.language {
+  text-decoration: none;
+  color: #cccccc;
+  font-size: 2rem;
+  padding: 1rem 0; }
+  .language:hover {
+    color: #f3f3f3; }
+
 .social-media {
   display: flex;
-  list-style: none; }
+  list-style: none;
+  align-items: center; }
+  .social-media__call-to-action {
+    font-size: 1.7rem;
+    color: #cccccc;
+    padding: 1rem 0; }
   .social-media__items {
     padding: 1rem;
     margin-right: 1rem;
     cursor: pointer; }
     .social-media__items i {
-      font-size: 3rem;
-      color: #f3f3f3; }
+      font-size: 2.5rem;
+      color: #cccccc; }
     .social-media__items:hover i {
-      color: #7d3f0f; }
+      color: #f3f3f3; }

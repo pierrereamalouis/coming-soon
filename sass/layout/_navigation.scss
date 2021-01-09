@@ -5,6 +5,7 @@
   z-index: 5555;
   position: fixed;
   top: 0;
+  align-items: center;
 
   &__item {
     grid-column: 2 / 3;
@@ -14,23 +15,40 @@
   }
 }
 
+.language {
+  text-decoration: none;
+  color: $gray;
+  font-size: 2rem;
+  padding: 1rem 0;
+
+  &:hover {
+    color: $white;
+  }
+}
+
 .social-media {
   display: flex;
   list-style: none;
+  align-items: center;
 
+  &__call-to-action {
+    font-size: 1.7rem;
+    color: $gray;
+    padding: 1rem 0;
+  }
   &__items {
     padding: 1rem;
     margin-right: 1rem;
     cursor: pointer;
 
     i {
-      font-size: 3rem;
-      color: $white;
+      font-size: 2.5rem;
+      color: $gray;
     }
 
     &:hover {
       i {
-        color: $primary;
+        color: $white;
       }
     }
   }
