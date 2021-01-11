@@ -233,6 +233,28 @@ body {
   display: grid;
   grid-template-columns: 1fr 75% 1fr; }
 
+.white-collar {
+  background-image: url("../images/large/white-collar.jpg");
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute; }
+
+.on-chair {
+  background-image: url("../images/large/on-chair.jpg");
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute; }
+
 .slideshow .slideshow:after {
   position: fixed;
   width: 100%;
