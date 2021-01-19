@@ -31,6 +31,9 @@
 // }
 
 .slideshow {
+  @include media-breakpoint-down(md) {
+    height: 10rem;
+  }
   .slideshow:after {
     position: fixed;
     width: 100%;
@@ -48,6 +51,7 @@
     span {
       width: 100%;
       height: 100%;
+      max-height: 100vh;
       position: absolute;
       top: 0px;
       left: 0px;

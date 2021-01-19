@@ -3,6 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
   }
   &-control,
   &-search,
@@ -13,7 +16,16 @@
     font-size: 1.7rem;
     font-family: inherit;
     height: 4.5rem;
-    width: 35rem;
+    width: 40%;
+
+    @include media-breakpoint-down(xl) {
+      width: 60%;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 90%;
+      margin-bottom: 2rem;
+    }
 
     outline: none;
 

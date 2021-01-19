@@ -8,11 +8,23 @@
   align-items: center;
   z-index: 10;
 
+  @include media-breakpoint-down(lg) {
+    margin-top: 0;
+  }
+
   &__title {
     text-align: center;
     font-size: 10rem;
     color: $white;
     z-index: 5;
+
+    @include media-breakpoint-down(md) {
+      font-size: 8rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 4rem;
+    }
   }
 
   &__subtitle {
@@ -22,11 +34,16 @@
     z-index: 5;
     text-align: center;
     font-size: 2rem;
-    width: 30%;
+    width: 70%;
+
+    @include media-breakpoint-down(md) {
+      margin: 2rem 0;
+    }
   }
 
   &__subscribe {
     z-index: 5;
+    width: 70%;
     h5 {
       text-align: center;
       font-size: 2rem;

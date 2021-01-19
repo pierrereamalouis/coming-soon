@@ -202,6 +202,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media only screen and (max-width: 768px) {
+    .form-group {
+      flex-direction: column; } }
 
 .form-control, .form-search, .form-select {
   display: inline-block;
@@ -210,7 +213,7 @@ body {
   font-size: 1.7rem;
   font-family: inherit;
   height: 4.5rem;
-  width: 35rem;
+  width: 40%;
   outline: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -219,6 +222,13 @@ body {
   border: 1px solid rgba(238, 238, 238, 0.27);
   border-radius: 5px;
   color: #ffffff; }
+  @media only screen and (max-width: 1200px) {
+    .form-control, .form-search, .form-select {
+      width: 60%; } }
+  @media only screen and (max-width: 768px) {
+    .form-control, .form-search, .form-select {
+      width: 90%;
+      margin-bottom: 2rem; } }
 
 .form-control::placeholder {
   color: gainsboro;
@@ -232,6 +242,9 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr 75% 1fr; }
+  @media only screen and (max-width: 992px) {
+    .container {
+      grid-template-columns: 1fr 90% 1fr; } }
 
 .white-collar {
   background-image: url("../images/large/white-collar.jpg");
@@ -255,6 +268,10 @@ body {
   left: 0;
   position: absolute; }
 
+@media only screen and (max-width: 768px) {
+  .slideshow {
+    height: 10rem; } }
+
 .slideshow .slideshow:after {
   position: fixed;
   width: 100%;
@@ -268,6 +285,7 @@ body {
 .slideshow li span {
   width: 100%;
   height: 100%;
+  max-height: 100vh;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -325,11 +343,20 @@ body {
   flex-direction: column;
   align-items: center;
   z-index: 10; }
+  @media only screen and (max-width: 992px) {
+    .content {
+      margin-top: 0; } }
   .content__title {
     text-align: center;
     font-size: 10rem;
     color: #f3f3f3;
     z-index: 5; }
+    @media only screen and (max-width: 768px) {
+      .content__title {
+        font-size: 8rem; } }
+    @media only screen and (max-width: 576px) {
+      .content__title {
+        font-size: 4rem; } }
   .content__subtitle {
     margin-top: 5rem;
     margin-bottom: 10rem;
@@ -337,9 +364,13 @@ body {
     z-index: 5;
     text-align: center;
     font-size: 2rem;
-    width: 30%; }
+    width: 70%; }
+    @media only screen and (max-width: 768px) {
+      .content__subtitle {
+        margin: 2rem 0; } }
   .content__subscribe {
-    z-index: 5; }
+    z-index: 5;
+    width: 70%; }
     .content__subscribe h5 {
       text-align: center;
       font-size: 2rem;
@@ -374,13 +405,21 @@ body {
   .social-media__call-to-action {
     font-size: 1.7rem;
     color: #cccccc;
-    padding: 1rem 0; }
+    padding: 1rem 0;
+    margin-right: 1.5rem; }
+    @media only screen and (max-width: 992px) {
+      .social-media__call-to-action {
+        display: none; } }
   .social-media__items {
     padding: 1rem;
-    margin-right: 1rem;
     cursor: pointer; }
+    .social-media__items:not(:last-child) {
+      margin-right: 1rem; }
     .social-media__items i {
       font-size: 2.5rem;
       color: #cccccc; }
+      @media only screen and (max-width: 992px) {
+        .social-media__items i {
+          font-size: 2rem; } }
     .social-media__items:hover i {
       color: #f3f3f3; }
