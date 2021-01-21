@@ -3,38 +3,34 @@ const router = express.Router();
 const app = express();
 const hostname = 'localhost';
 const port = 3000;
+const exphbs = require('express-handlebars');
+const i18n = require('./i18n.config');
+
+const hbs = exphbs.create({
+  helpers: {
+    i18n: () => {
+      i18n.__.apply(this, arguments);
+    },
+  },
+});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.static(`${__dirname}/public`));
 
-// Send default page in english
-app.get('/example1', (req, res) => {
-  res.sendFile(`${__dirname}/public/white-collar.html`);
-});
-
-// Send page in french
-app.get('/example1-fr', (req, res) => {
-  res.sendFile(`${__dirname}/public/white-collar-fr.html`);
-});
-
-// Send default page in english
-app.get('/example2', (req, res) => {
-  res.sendFile(`${__dirname}/public/on-chair.html`);
-});
-
-// Send page in french
-app.get('/example2-fr', (req, res) => {
-  res.sendFile(`${__dirname}/public/on-chair-fr.html`);
-});
-
-app.get('/slideshow', (req, res) => {
-  res.sendFile(`${__dirname}/public/slideshow.html`);
-});
-
-app.get('/slideshow-fr', (req, res) => {
-  res.sendFile(`${__dirname}/public/slideshow-fr.html`);
-});
-
 app.use('/', router);
+
+app.use(i18n.init);
+
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
+app.get('/fr', (req, res) => {
+  res.setLocale('fr');
+  res.render('index');
+});
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http:/\/${hostname}:${port}/`);
