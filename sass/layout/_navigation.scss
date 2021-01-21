@@ -31,6 +31,9 @@
   list-style: none;
   align-items: center;
 
+  a {
+    text-decoration: none;
+  }
   &__call-to-action {
     font-size: 1.7rem;
     color: $gray;

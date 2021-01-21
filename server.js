@@ -12,10 +12,12 @@ const hbs = exphbs.create({
       i18n.__.apply(this, arguments);
     },
   },
+  defaultLayout: false,
+  extname: '.hbs',
 });
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.engine('.hbs', hbs.engine);
+app.set('view engine', '.hbs');
 
 app.use(express.static(`${__dirname}/public`));
 

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://kit.fontawesome.com/092ad1aadf.js" crossorigin="anonymous" defer></script>
 
-    <script src="https://unpkg.com/browse/turbolinks@5.0.0/" defer></script>
+    {{!-- <script src="https://unpkg.com/browse/turbolinks@5.0.0/" defer></script> --}}
     <title>Coming Soon / Blank-Canvas</title>
   </head>
   <body>
@@ -23,10 +23,18 @@
         <a href="{{ __ "changeLocaleURL" }}" class="language">{{ __ "changeLocale" }}</a>
         <ul class="social-media">
           <p class="social-media__call-to-action">{{ __ "socialMedia"}}</p>
-          <li class="social-media__items"><i class="fab fa-twitter"></i></li>
-          <li class="social-media__items"><i class="fab fa-facebook"></i></li>
-          <li class="social-media__items"><i class="fab fa-linkedin-in"></i></li>
-          <li class="social-media__items"><i class="fab fa-instagram"></i></li>
+          {{!-- <li class="social-media__items">
+            <a href=""><i class="fab fa-twitter"></i></a>
+          </li> --}}
+          <li class="social-media__items">
+            <a href="https://www.facebook.com/Blank-Canvas-company-104087848214695" target="_blank"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li class="social-media__items">
+            <a href="https://www.linkedin.com/in/blank-canvas-830b89202/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </li>
+          <li class="social-media__items">
+            <a href="https://www.instagram.com/blankcanvas.ca/?fbclid=IwAR0J7wyiP54G1txr0w4AfQkDwMY4iaNtmyPEq0L9zAKvko7uE8Jr_NdBnw8" target="_blank"><i class="fab fa-instagram"></i></a>
+          </li>
         </ul>
       </div>
     </nav>
