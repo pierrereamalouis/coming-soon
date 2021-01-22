@@ -1,6 +1,7 @@
 .form {
   &-group {
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     @include media-breakpoint-down(md) {
@@ -48,5 +49,13 @@
 
   &-control:focus {
     border-color: #ffffff;
+  }
+
+  &-error {
+    display: none;
+    color: #f30000;
+    flex-basis: 100%;
+    width: 0;
+    text-align: center;
   }
 }

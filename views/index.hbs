@@ -41,18 +41,74 @@
     <div class="cover"></div>
     <div class="content">
       <h1 class="content__title">Blank-Canvas</h1>
-      <h4 class="content__subtitle">{{ __ "subtitle" }}</h4>
-      <div class="content__subscribe">
+      <h4 id="subtitle" class="content__subtitle">{{ __ "subtitle" }}</h4>
+      <div id="contentSubscribe" class="content__subscribe">
         <h5 class="mb-5">{{ __ "subscribe" }}</h5>
         <div class="content__email-box">
           <form class="form" action="">
             <div class="form-group">
-              <input class="form-control mr-2" type="email" placeholder="{{ __ "emailPlaceholder" }}" />
-              <button class="btn btn-primary" type="submit">{{ __ "submit"}}</button>
+              <input id="email" class="form-control mr-2" type="email" placeholder="{{ __ "emailPlaceholder" }}" />
+              
+              <button id="btnSubmit" class="btn btn-primary" type="submit">{{ __ "submit"}}</button>
+              <p id="errorMsg" class="form-error">Please enter a valid email</p>
             </div>
+            
           </form>
-        </div>
+        </div>        
       </div>
+      <div id="success" class="content__success">
+          <h2>Confirm your email!</h2>
+          <p>Last step is to confirm your with the link we've just sent to your email inbox.</p>
+       </div>
     </div>
+
+    <script>
+      const contentSubscribe = document.getElementById("contentSubscribe"),
+            subtitle = document.getElementById("subtitle"),
+            email = document.getElementById("email"),
+            errorMsg = document.getElementById("errorMsg"),
+            btnSubmit = document.getElementById("btnSubmit"),
+            success = document.getElementById("success");
+            
+            
+       function validateEmail(inputEmail){
+          let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+          return emailPattern.test(inputEmail);
+       }     
+          
+
+      email.addEventListener('input', () => {
+        errorMsg.style.display = "none";
+      })
+
+
+      btnSubmit.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        if(email.value === null || email.value === "") {
+          errorMsg.style.display = "block";
+        } else if(!validateEmail(email.value)) {
+          errorMsg.style.display = "block";
+        } else {
+          let data = {
+            method: 'POST',
+            body: JSON.stringify({email: email.value, json:true}),
+            headers: {"Content-type": "application/json"}
+          }
+
+          fetch('/subscribe', data).then(res => {
+            contentSubscribe.classList.add('invisible');
+          subtitle.classList.add('invisible');
+          success.style.display = "block";
+          }).catch(error => {
+           errorMsg.textContent = "Something went wrong. Refresh and try again" 
+           errorMsg.style.display = "block";
+          })
+        }
+      });
+
+
+    </script>
   </body>
 </html>

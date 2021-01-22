@@ -200,6 +200,7 @@ body {
 
 .form-group {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center; }
   @media only screen and (max-width: 768px) {
@@ -238,6 +239,13 @@ body {
 
 .form-control:focus {
   border-color: #ffffff; }
+
+.form-error {
+  display: none;
+  color: #f30000;
+  flex-basis: 100%;
+  width: 0;
+  text-align: center; }
 
 .container {
   display: grid;
@@ -375,6 +383,13 @@ body {
       text-align: center;
       font-size: 2rem;
       color: #f3f3f3; }
+    .content__subscribe--success {
+      display: none; }
+  .content__success {
+    display: none;
+    z-index: 5;
+    color: #f3f3f3;
+    text-align: center; }
 
 .nav {
   background-color: rgba(0, 0, 0, 0);
@@ -402,6 +417,8 @@ body {
   display: flex;
   list-style: none;
   align-items: center; }
+  .social-media a {
+    text-decoration: none; }
   .social-media__call-to-action {
     font-size: 1.7rem;
     color: #cccccc;

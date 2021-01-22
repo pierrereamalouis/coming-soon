@@ -49,6 +49,18 @@
       font-size: 2rem;
       color: $white;
     }
+
+    &--success {
+      display: none;
+    }
+  }
+
+  &__success {
+    display: none;
+    z-index: 5;
+    color: $white;
+
+    text-align: center;
   }
 
   &__email-box {
