@@ -93,8 +93,7 @@
         } else {
           let data = {
             method: 'POST',
-            body: JSON.stringify({email: email.value, json:true}),
-            headers: {"Content-type": "application/json"}
+            body: JSON.stringify({email: email.value, json:true})
           }
 
           fetch('/subscribe', data).then(res => {

@@ -5,6 +5,7 @@ const hostname = 'localhost';
 const port = 3000;
 const exphbs = require('express-handlebars');
 const i18n = require('./i18n.config');
+const mailchimp = require('./mailchimp.config');
 
 const hbs = exphbs.create({
   helpers: {
@@ -32,6 +33,11 @@ app.get('/', (req, res) => {
 app.get('/fr', (req, res) => {
   res.setLocale('fr');
   res.render('index');
+});
+
+app.post('/subscribe', (req, res) => {
+  // const { email, js } = req.body;
+  console.log('email', req.body);
 });
 
 app.listen(port, hostname, () => {
