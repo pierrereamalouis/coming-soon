@@ -43,15 +43,20 @@ app.get('/fr', (req, res) => {
 app.post('/subscribe', (req, res) => {
   const { email, js } = req.body;
 
-  const contactID = mailchimp.addEmailToAudience(email);
+  const response = mailchimp.addEmailToAudience(email);
 
-  if (contactID) {
-    res.status(200).json({
-      status: 'success',
+  response
+    .then((contact) => {
+      res.status(200).json({
+        status: 'success',
+        data: {
+          message: `Successfully added contact as an audience member. The contact's id is ${contact.id}.`,
+        },
+      });
+    })
+    .catch((error) => {
+      res.status(error.status).send({ error: 'Something failed!' });
     });
-  } else {
-    res.status(500).send({ error: 'Something failed!' });
-  }
 });
 
 app.listen(port, hostname, () => {

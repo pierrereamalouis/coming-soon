@@ -1,24 +1,17 @@
 const mailchimp = require('@mailchimp/mailchimp_marketing');
 
 mailchimp.setConfig({
-  apiKey: 'a12b87b83c5c7fa03cfc56773b5670f3-us7',
+  apiKey: '3f5e67ef3b10e6ae76502ab2403e94e9-us7',
   server: 'us7',
 });
 
 const listID = 'ece1b36346';
 
 exports.addEmailToAudience = async (subscribingEmail) => {
-  try {
-    const response = await mailchimp.lists.addListMember(listID, {
-      email_address: subscribingEmail,
-      status: 'pending',
-    });
+  const response = await mailchimp.lists.addListMember(listID, {
+    email_address: subscribingEmail,
+    status: 'subscribed',
+  });
 
-    console.log(
-      `Successfully added contact as an audience member. The contact's id is ${response.id}.`
-    );
-    return response.id;
-  } catch (error) {
-    console.log(error);
-  }
+  return response;
 };
