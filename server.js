@@ -17,10 +17,15 @@ const hbs = exphbs.create({
   extname: '.hbs',
 });
 
+// Setting handlebars as view/template engine to be used in express
 app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
+// Make the static style and script file available to the app
 app.use(express.static(`${__dirname}/public`));
+
+// To parse json
+app.use(express.json());
 
 app.use('/', router);
 
@@ -36,8 +41,17 @@ app.get('/fr', (req, res) => {
 });
 
 app.post('/subscribe', (req, res) => {
-  // const { email, js } = req.body;
-  console.log('email', req.body);
+  const { email, js } = req.body;
+
+  const contactID = mailchimp.addEmailToAudience(email);
+
+  if (contactID) {
+    res.status(200).json({
+      status: 'success',
+    });
+  } else {
+    res.status(500).send({ error: 'Something failed!' });
+  }
 });
 
 app.listen(port, hostname, () => {

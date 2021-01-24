@@ -93,17 +93,24 @@
         } else {
           let data = {
             method: 'POST',
-            body: JSON.stringify({email: email.value, json:true})
+            body: JSON.stringify({email: email.value, json:true}),
+            headers: {
+              'Content-Type': 'application/json'
+            }
           }
 
           fetch('/subscribe', data).then(res => {
-            contentSubscribe.classList.add('invisible');
+
+            if(res.status >= 400 && res.status < 600) {
+              errorMsg.textContent = "Something went wrong. Refresh and try again" 
+            errorMsg.style.display = "block";
+            } else {
+              contentSubscribe.classList.add('invisible');
           subtitle.classList.add('invisible');
           success.style.display = "block";
-          }).catch(error => {
-           errorMsg.textContent = "Something went wrong. Refresh and try again" 
-           errorMsg.style.display = "block";
-          })
+            }
+            
+          });
         }
       });
 

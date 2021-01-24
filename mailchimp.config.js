@@ -7,14 +7,17 @@ mailchimp.setConfig({
 
 const listID = 'ece1b36346';
 
-exports.mailchimpAddEmailToAudience = async (subscribingUser) => {
+exports.addEmailToAudience = async (subscribingEmail) => {
   try {
     const response = await mailchimp.lists.addListMember(listID, {
-      email_address: subscribingUser.email,
+      email_address: subscribingEmail,
       status: 'pending',
     });
 
-    console.log(`Successfully added contact as an audience member. The contact's id is ${response.id}.`);
+    console.log(
+      `Successfully added contact as an audience member. The contact's id is ${response.id}.`
+    );
+    return response.id;
   } catch (error) {
     console.log(error);
   }
