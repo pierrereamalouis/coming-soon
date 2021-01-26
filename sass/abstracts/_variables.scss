@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 // Font
-$font-primary: 'Helvetica', sans-serif;
+$font-primary: 'Oswald', sans-serif;
 // Colors
 $primary: #7d3f0f;
 $primary-dark: darken($primary, 10%);
@@ -12,7 +13,8 @@ $gray: #cccccc;
 
 //Box Shadow
 $box-shadow: 0 1rem 1.5rem -0.8rem ($black, 0.8);
-$button-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.38), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+$button-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.38),
+  0 6px 20px 0 rgba(0, 0, 0, 0.39);
 $menu-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 // Breakpoints
