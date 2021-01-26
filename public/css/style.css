@@ -184,6 +184,9 @@ body {
     .btn-secondary:hover {
       background-color: #c27933;
       color: #7d3f0f; }
+  .btn-disabled {
+    background-color: #cccccc;
+    color: black; }
   .btn-lg {
     width: inherit;
     padding: 1rem; }
@@ -230,6 +233,8 @@ body {
     .form-control, .form-search, .form-select {
       width: 90%;
       margin-bottom: 2rem; } }
+  .form-control--error, .form-search--error, .form-select--error {
+    border: 1px solid red; }
 
 .form-control::placeholder {
   color: gainsboro;
@@ -244,8 +249,8 @@ body {
   display: none;
   color: #f30000;
   flex-basis: 100%;
-  width: 0;
-  text-align: center; }
+  text-align: center;
+  font-size: 1.9rem; }
 
 .container {
   display: grid;
@@ -306,7 +311,8 @@ body {
   animation: imageAnimation 36s linear infinite 0s; }
 
 .slideshow li:nth-child(1) span {
-  background-image: url("../images/large/white-collar.jpg"); }
+  background-image: url("../images/small/white-collar.jpg");
+  object-position: 100% 50%; }
 
 .slideshow li:nth-child(2) span {
   background-image: url("../images/large/on-chair.jpg");
@@ -385,7 +391,7 @@ body {
       color: #f3f3f3; }
     .content__subscribe--success {
       display: none; }
-  .content__success {
+  .content__success, .content__error {
     display: none;
     z-index: 5;
     color: #f3f3f3;

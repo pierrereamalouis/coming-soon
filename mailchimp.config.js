@@ -10,7 +10,7 @@ const listID = 'ece1b36346';
 exports.addEmailToAudience = async (subscribingEmail) => {
   const response = await mailchimp.lists.addListMember(listID, {
     email_address: subscribingEmail,
-    status: 'subscribed',
+    status: 'pending',
   });
 
   return response;

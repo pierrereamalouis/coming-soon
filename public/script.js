@@ -1,9 +1,10 @@
 const contentSubscribe = document.getElementById('contentSubscribe'),
   subtitle = document.getElementById('subtitle'),
-  email = document.getElementById('email'),
+  emailInput = document.getElementById('email'),
   errorMsg = document.getElementById('errorMsg'),
   btnSubmit = document.getElementById('btnSubmit'),
-  success = document.getElementById('success');
+  success = document.getElementById('success'),
+  error = document.getElementById('error');
 
 function validateEmail(inputEmail) {
   let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -11,21 +12,24 @@ function validateEmail(inputEmail) {
   return emailPattern.test(inputEmail);
 }
 
-email.addEventListener('input', () => {
+emailInput.addEventListener('input', () => {
   errorMsg.style.display = 'none';
+  btnSubmit.disabled = false;
+  btnSubmit.classList.replace('btn-disabled', 'btn-primary');
 });
 
 btnSubmit.addEventListener('click', (event) => {
   event.preventDefault();
 
-  if (email.value === null || email.value === '') {
+  if (!validateEmail(emailInput.value)) {
     errorMsg.style.display = 'block';
-  } else if (!validateEmail(email.value)) {
-    errorMsg.style.display = 'block';
+    emailInput.classList.add('form-control--error');
+    btnSubmit.disabled = true;
+    btnSubmit.classList.replace('btn-primary', 'btn-disabled');
   } else {
     let data = {
       method: 'POST',
-      body: JSON.stringify({ email: email.value, json: true }),
+      body: JSON.stringify({ email: emailInput.value, json: true }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -33,8 +37,9 @@ btnSubmit.addEventListener('click', (event) => {
 
     fetch('/subscribe', data).then((res) => {
       if (res.status >= 400 && res.status < 600) {
-        errorMsg.textContent = 'Something went wrong. Refresh and try again';
-        errorMsg.style.display = 'block';
+        contentSubscribe.classList.add('invisible');
+        subtitle.classList.add('invisible');
+        error.style.display = 'block';
       } else {
         contentSubscribe.classList.add('invisible');
         subtitle.classList.add('invisible');

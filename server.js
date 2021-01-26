@@ -41,7 +41,7 @@ app.get('/fr', (req, res) => {
 });
 
 app.post('/subscribe', (req, res) => {
-  const { email, js } = req.body;
+  const { email } = req.body;
 
   const response = mailchimp.addEmailToAudience(email);
 
@@ -55,7 +55,7 @@ app.post('/subscribe', (req, res) => {
       });
     })
     .catch((error) => {
-      res.status(error.status).send({ error: 'Something failed!' });
+      res.status(error.status).send({ error });
     });
 });
 

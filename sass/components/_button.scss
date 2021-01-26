@@ -46,6 +46,11 @@
     }
   }
 
+  &-disabled {
+    background-color: $gray;
+    color: $black;
+  }
+
   &-lg {
     width: inherit;
     padding: 1rem;

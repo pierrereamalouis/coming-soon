@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://kit.fontawesome.com/092ad1aadf.js" crossorigin="anonymous" defer></script>
-
-    {{!-- <script src="https://unpkg.com/browse/turbolinks@5.0.0/" defer></script> --}}
   <script src="script.js" defer></script>
     <title>Coming Soon / Blank-Canvas</title>
   </head>
@@ -51,15 +49,18 @@
               <input id="email" class="form-control mr-2" type="email" placeholder="{{ __ "emailPlaceholder" }}" />
               
               <button id="btnSubmit" class="btn btn-primary" type="submit">{{ __ "submit"}}</button>
-              <p id="errorMsg" class="form-error">Please enter a valid email</p>
+              <p id="errorMsg" class="form-error">{{ __ "enterValidEmail" }}</p>
             </div>
             
           </form>
         </div>        
       </div>
       <div id="success" class="content__success">
-          <h2>Confirm your email!</h2>
-          <p>Last step is to confirm your with the link we've just sent to your email inbox.</p>
+          <h2>{{ __ "confirmEmail" }}</h2>
+          <p>{{ __ "confirmEmailInstructions" }}</p>
+       </div>
+       <div id="error" class="content__error">
+          <h2>{{ __ "serverFail" }}</h2>
        </div>
     </div>
   </body>

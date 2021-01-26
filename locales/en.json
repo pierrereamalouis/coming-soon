@@ -6,5 +6,9 @@
   "subtitle": "Our website is coming soon!",
   "subscribe": "Subscribe here for launch!",
   "emailPlaceholder": "Email Address...",
-  "submit": "Submit"
+  "submit": "Submit",
+  "enterValidEmail": "Please enter a valid email",
+  "confirmEmail": "Confirm your email!",
+  "confirmEmailInstructions": "Last step is to confirm your email address using the link we've just sent to your email inbox.",
+  "serverFail": "Something went wrong. Refresh the page and try again."
 }

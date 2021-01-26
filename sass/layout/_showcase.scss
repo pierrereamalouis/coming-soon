@@ -42,9 +42,7 @@
     left: 0px;
     z-index: 0;
     content: '';
-    background: transparent
-      url('../images/large/chrissa-giannakoudi-0j9_h17XHdo-unsplash.jpg') repeat
-      top left;
+    background: transparent url('../images/large/chrissa-giannakoudi-0j9_h17XHdo-unsplash.jpg') repeat top left;
   }
 }
 
@@ -68,7 +66,8 @@
   }
 
   li:nth-child(1) span {
-    background-image: url('../images/large/white-collar.jpg');
+    background-image: url('../images/small/white-collar.jpg');
+    object-position: 100% 50%;
   }
   li:nth-child(2) span {
     background-image: url('../images/large/on-chair.jpg');
