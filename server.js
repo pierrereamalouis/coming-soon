@@ -4,8 +4,8 @@ const app = express();
 const hostname = 'localhost';
 const port = 3000;
 const exphbs = require('express-handlebars');
-const i18n = require('./i18n.config');
-const mailchimp = require('./mailchimp.config');
+const i18n = require('./config/i18n.config');
+const mailchimp = require('./config/mailchimp.config');
 
 const hbs = exphbs.create({
   helpers: {
